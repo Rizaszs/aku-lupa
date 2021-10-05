@@ -1,0 +1,27 @@
+{{>head}}
+
+{{#if message}}
+<div class="alert alert-{{message.type}}" role="alert">
+    {{message.message}}
+</div>
+{{/if}}
+
+{{>navbar}}
+
+<div class="container product">
+    <div class="px-5">
+      {{#if isContentOwner}}
+        <div class="text-end mb-2">
+            <a href="/product/edit" class="btn-edit"><img src="/static/icons/edit.svg" alt="edit"></a>
+            <a href="/product/delete" class="btn-edit"><img src="/static/icons/delete.svg" alt="delete"></a>
+        </div>
+      {{/if}}
+
+      <img src="{{product.image}}" alt="product image" class="img-main">
+      
+      <h4 class="mt-4">{{product.name}}</h4>
+      <p>{{{product.description}}}</p>
+    </div>
+</div>
+
+{{>footer}}

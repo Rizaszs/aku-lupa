@@ -1,0 +1,85 @@
+{{>head}}
+
+{{#if message}}
+<div class="alert alert-{{message.type}}" role="alert">
+    {{message.message}}
+</div>
+{{/if}}
+
+{{>navbar}}
+
+<div class="wrapper">
+    {{!-- layout home --}}
+    <section id="home">
+        <img src="https://i.pinimg.com/736x/db/89/2a/db892a2da4432b56cd2b099cb180681d.jpg" />
+        <div class="column">
+            <p class="description">Belanja keren #dirumahaja</p>
+            <h2>Tetap Sehat, Tetap Semangat</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, nobis.</p>
+            <p><a href="" class="button-reverse">Pelajari Lebih Lanjut</a></p>
+        </div>
+    </section>
+
+    {{!-- layout product --}}
+    <section id="product">
+            <div class="column">
+                <p class="description">You Will Need This</p>
+                <h2>Product best seller</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed deserunt voluptatibus possimus blanditiis reiciendis. Qui, facilis! Delectus exercitationem dolores sapiente?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed deserunt voluptatibus possimus blanditiis reiciendis. Qui, facilis! Delectus exercitationem dolores sapiente?</p>
+                <p><a href="" class="button">Pelajari Lebih Lanjut</a></p>
+            </div>
+            <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//85/MTA-2804051/indocustomcase_indocustomcase-paris-saint-germain-logo-psg-03-cover-casing-for-xiaomi-pocophone-f1_full03.jpg"/>
+        </section>
+
+    <div class="container mt-4">
+        {{#if products}}
+        <div class="row main-content">
+            <div class="col-4">
+                <img src="{{product.0.image}}" class="img-content img-fluid" alt="">
+            </div>
+            <div class="col-8">
+                <a href="/product/{{products.0.id}}"></a>
+                <div class="text-title-content mb-4">
+                    {{products.0.name}}
+                </div>
+                <div class="text-desc-content">
+                    {{products.0.description}}
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            {{#each products}}
+            <div class="col-3 content-list">
+                <a href="/product/{{this.id}}">
+                     <img src="{{product.image}}" alt="product image" class="img-main">
+                    <div class="title mt-3">
+                        {{this.name}}
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+
+    {{!-- layout founder --}}
+    <section id="contact">
+        <div class="center">
+            <div class="column">
+                <h2>Founder</h2>
+                <p>Man a focus and comitmen</p>
+            </div>
+
+            <div class="profile-list">
+                <div class="profile">
+                    <img src="/static/image/profil.png" />
+                    <p>Oututsuki isshiki</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{{> footer}}
